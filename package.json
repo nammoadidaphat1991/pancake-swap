@@ -1,6 +1,6 @@
 {
-  "name": "@pancakeswap/interface",
-  "description": "Pancakeswap Interface",
+  "name": "@easybake/interface",
+  "description": "Easybake Interface",
   "homepage": ".",
   "private": true,
   "dependencies": {
