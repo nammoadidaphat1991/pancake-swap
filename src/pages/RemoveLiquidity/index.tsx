@@ -10,6 +10,7 @@ import { RouteComponentProps } from 'react-router'
 
 import { BigNumber } from '@ethersproject/bignumber'
 import ConnectWalletButton from 'components/ConnectWalletButton'
+import useI18n from 'hooks/useI18n'
 import { AutoColumn, ColumnCenter } from '../../components/Column'
 import TransactionConfirmationModal, { ConfirmationModalContent } from '../../components/TransactionConfirmationModal'
 import CurrencyInputPanel from '../../components/CurrencyInputPanel'
@@ -26,7 +27,7 @@ import { useCurrency } from '../../hooks/Tokens'
 import { usePairContract } from '../../hooks/useContract'
 
 import { useTransactionAdder } from '../../state/transactions/hooks'
-import { StyledInternalLink, TYPE } from '../../components/Shared'
+import { StyledInternalLink } from '../../components/Shared'
 import { calculateGasMargin, calculateSlippageAmount, getRouterContract } from '../../utils'
 import { currencyId } from '../../utils/currencyId'
 import useDebouncedChangeHandler from '../../utils/useDebouncedChangeHandler'
@@ -39,8 +40,6 @@ import { useBurnActionHandlers, useDerivedBurnInfo, useBurnState } from '../../s
 
 import { Field } from '../../state/burn/actions'
 import { useUserDeadline, useUserSlippageTolerance } from '../../state/user/hooks'
-
-const { italic: Italic } = TYPE
 
 const OutlineCard = styled.div`
   border: 1px solid ${({ theme }) => theme.colors.borderColor};
@@ -61,6 +60,7 @@ export default function RemoveLiquidity({
 }: RouteComponentProps<{ currencyIdA: string; currencyIdB: string }>) {
   const [currencyA, currencyB] = [useCurrency(currencyIdA) ?? undefined, useCurrency(currencyIdB) ?? undefined]
   const { account, chainId, library } = useActiveWeb3React()
+  const TranslateString = useI18n()
   const [tokenA, tokenB] = useMemo(() => [wrappedCurrency(currencyA, chainId), wrappedCurrency(currencyB, chainId)], [
     currencyA,
     currencyB,
@@ -347,11 +347,11 @@ export default function RemoveLiquidity({
           </RowFixed>
         </RowBetween>
 
-        <Italic fontSize={12} color={theme.colors.textSubtle} textAlign="left" padding="12px 0 0 0">
+        <Text small color="textSubtle" textAlign="left" padding="12px 0 0 0" style={{ fontStyle: 'italic' }}>
           {`Output is estimated. If the price changes by more than ${
             allowedSlippage / 100
           }% your transaction will revert.`}
-        </Italic>
+        </Text>
       </AutoColumn>
     )
   }
@@ -360,7 +360,7 @@ export default function RemoveLiquidity({
     return (
       <>
         <RowBetween>
-          <Text color="textSubtle">{`FLIP ${currencyA?.symbol}/${currencyB?.symbol}`} Burned</Text>
+          <Text color="textSubtle">{`LP ${currencyA?.symbol}/${currencyB?.symbol}`} Burned</Text>
           <RowFixed>
             <DoubleCurrencyLogo currency0={currencyA} currency1={currencyB} margin />
             <Text>{parsedAmounts[Field.LIQUIDITY]?.toSignificant(6)}</Text>
@@ -369,7 +369,7 @@ export default function RemoveLiquidity({
         {pair && (
           <>
             <RowBetween>
-              <Text color="textSubtle">Price</Text>
+              <Text color="textSubtle">{TranslateString(1182, 'Price')}</Text>
               <Text>
                 1 {currencyA?.symbol} = {tokenA ? pair.priceOf(tokenA).toSignificant(6) : '-'} {currencyB?.symbol}
               </Text>
@@ -383,7 +383,7 @@ export default function RemoveLiquidity({
           </>
         )}
         <Button disabled={!(approval === ApprovalState.APPROVED || signatureData !== null)} onClick={onRemove}>
-          Confirm
+          {TranslateString(1136, 'Confirm')}
         </Button>
       </>
     )
@@ -455,7 +455,7 @@ export default function RemoveLiquidity({
             hash={txHash || ''}
             content={() => (
               <ConfirmationModalContent
-                title="You will receive"
+                title={TranslateString(1156, 'You will receive')}
                 onDismiss={handleDismissConfirmation}
                 topContent={modalHeader}
                 bottomContent={modalBottom}
@@ -474,7 +474,7 @@ export default function RemoveLiquidity({
                         setShowDetailed(!showDetailed)
                       }}
                     >
-                      {showDetailed ? 'Simple' : 'Detailed'}
+                      {showDetailed ? TranslateString(1184, 'Simple') : TranslateString(1186, 'Detailed')}
                     </ClickableText>
                   </RowBetween>
                   <Flex justifyContent="start">
@@ -486,21 +486,33 @@ export default function RemoveLiquidity({
                         <Slider value={innerLiquidityPercentage} onChange={setInnerLiquidityPercentage} />
                       </Flex>
                       <Flex justifyContent="space-around">
-                        <Button variant="tertiary" size="sm" onClick={() => onUserInput(Field.LIQUIDITY_PERCENT, '25')}>
+                        <Button
+                          variant="tertiary"
+                          scale="sm"
+                          onClick={() => onUserInput(Field.LIQUIDITY_PERCENT, '25')}
+                        >
                           25%
                         </Button>
-                        <Button variant="tertiary" size="sm" onClick={() => onUserInput(Field.LIQUIDITY_PERCENT, '50')}>
+                        <Button
+                          variant="tertiary"
+                          scale="sm"
+                          onClick={() => onUserInput(Field.LIQUIDITY_PERCENT, '50')}
+                        >
                           50%
                         </Button>
-                        <Button variant="tertiary" size="sm" onClick={() => onUserInput(Field.LIQUIDITY_PERCENT, '75')}>
+                        <Button
+                          variant="tertiary"
+                          scale="sm"
+                          onClick={() => onUserInput(Field.LIQUIDITY_PERCENT, '75')}
+                        >
                           75%
                         </Button>
                         <Button
                           variant="tertiary"
-                          size="sm"
+                          scale="sm"
                           onClick={() => onUserInput(Field.LIQUIDITY_PERCENT, '100')}
                         >
-                          Max
+                          {TranslateString(166, 'Max')}
                         </Button>
                       </Flex>
                     </>
@@ -542,15 +554,15 @@ export default function RemoveLiquidity({
                                 currencyB === ETHER ? WETH[chainId].address : currencyIdB
                               }`}
                             >
-                              Receive WBNB
+                              {TranslateString(1188, 'Receive WBNB')}
                             </StyledInternalLink>
                           ) : oneCurrencyIsWETH ? (
                             <StyledInternalLink
                               to={`/remove/${
-                                currencyA && currencyEquals(currencyA, WETH[chainId]) ? 'ETH' : currencyIdA
-                              }/${currencyB && currencyEquals(currencyB, WETH[chainId]) ? 'ETH' : currencyIdB}`}
+                                currencyA && currencyEquals(currencyA, WETH[chainId]) ? 'BNB' : currencyIdA
+                              }/${currencyB && currencyEquals(currencyB, WETH[chainId]) ? 'BNB' : currencyIdB}`}
                             >
-                              Receive BNB
+                              {TranslateString(1190, 'Receive BNB')}
                             </StyledInternalLink>
                           ) : null}
                         </RowBetween>
@@ -623,7 +635,7 @@ export default function RemoveLiquidity({
               )}
               <div style={{ position: 'relative' }}>
                 {!account ? (
-                  <ConnectWalletButton fullWidth />
+                  <ConnectWalletButton width="100%" />
                 ) : (
                   <RowBetween>
                     <Button
