@@ -23,9 +23,9 @@ const useAuth = () => {
       activate(connector, async (error: Error) => {
         window.localStorage.removeItem(connectorLocalStorageKey)
         if (error instanceof UnsupportedChainIdError) {
-          toastError('Unsupported Chain Id', 'Unsupported Chain Id Error. Check your chain Id.')
+          toastError('Unsupported Chain ID', 'Check your Chain ID.')
         } else if (error instanceof NoEthereumProviderError || error instanceof NoBscProviderError) {
-          toastError('Provider Error', 'No provider was found')
+          toastError('Provider Error', 'No provider found.')
         } else if (
           error instanceof UserRejectedRequestErrorInjected ||
           error instanceof UserRejectedRequestErrorWalletConnect
@@ -34,13 +34,13 @@ const useAuth = () => {
             const walletConnector = connector as WalletConnectConnector
             walletConnector.walletConnectProvider = null
           }
-          toastError('Authorization Error', 'Please authorize to access your account')
+          toastError('Authorization Error', 'Please authorize to access your account.')
         } else {
           toastError(error.name, error.message)
         }
       })
     } else {
-      toastError("Can't find connector", 'The connector config is wrong')
+      toastError("Can't find connector", 'The connector config is wrong.')
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])

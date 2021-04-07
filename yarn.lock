@@ -9253,10 +9253,10 @@ easybake-swap-core@^0.2.1:
     truffle-hdwallet-provider "^1.0.17"
     truffle-verify "^1.0.8"
 
-easybake-uikit@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/easybake-uikit/-/easybake-uikit-2.0.1.tgz#c9bbd55da71ae46bebed75b1885a482ba62b5174"
-  integrity sha512-gyhhYiGVrb7jwyv9trTXj0W0nxCsmAuPDLCrvDkctan1VwNogHL5/cExRimE/gP+flJSIG4xI6i5x/aS9mwjXQ==
+easybake-uikit@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/easybake-uikit/-/easybake-uikit-2.1.0.tgz#446d3541033f26dd5547f28a751f61a9fd8372a6"
+  integrity sha512-uUE9O0vBrwh3b8gXR2AzaHvunRM3hF4wifU7/TwXuhbl7dwr7ROgvrmkjUfx2MqEdyjBmVz0E6dhl/WWYAurBg==
   dependencies:
     "@types/lodash" "^4.14.162"
     "@types/styled-system" "^5.1.10"

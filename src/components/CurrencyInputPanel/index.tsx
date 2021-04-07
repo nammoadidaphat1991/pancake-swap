@@ -167,7 +167,7 @@ export default function CurrencyInputPanel({
                         currency.symbol.length - 5,
                         currency.symbol.length
                       )}`
-                    : currency?.symbol) || TranslateString(1196, 'Select a currency')}
+                    : currency?.symbol) || TranslateString(1196, 'Currency')}
                 </Text>
               )}
               {!disableCurrencySelect && <ChevronDownIcon />}

@@ -286,7 +286,7 @@ const Swap = () => {
           />
           <PageHeader
             title={TranslateString(8, 'Exchange')}
-            description={TranslateString(1192, 'Trade tokens in an instant')}
+            description={TranslateString(1192, 'Swap Tokens')}
           />
           <CardBody>
             <AutoColumn gap="md">
@@ -385,11 +385,11 @@ const Swap = () => {
               ) : showWrap ? (
                 <Button disabled={Boolean(wrapInputError)} onClick={onWrap} width="100%">
                   {wrapInputError ??
-                    (wrapType === WrapType.WRAP ? 'Wrap' : wrapType === WrapType.UNWRAP ? 'Unwrap' : null)}
+                    (wrapType === WrapType.WRAP ? 'WRAP' : wrapType === WrapType.UNWRAP ? 'UNWRAP' : null)}
                 </Button>
               ) : noRoute && userHasSpecifiedInputOutput ? (
                 <GreyCard style={{ textAlign: 'center' }}>
-                  <Text mb="4px">{TranslateString(1194, 'Insufficient liquidity for this trade.')}</Text>
+                  <Text mb="4px">{TranslateString(1194, 'Insufficient Liquidity.')}</Text>
                 </GreyCard>
               ) : showApproveFlow ? (
                 <RowBetween>

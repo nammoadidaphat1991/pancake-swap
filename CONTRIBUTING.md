@@ -1,7 +1,7 @@
-# Contributing to the Pancake ecosystem 🥞
+# Contributing to the EasyBake ecosystem 🥞
 
 Thanks for taking the time to contribute !
-You can start by reading our [Contribution guidelines](https://docs.pancakeswap.finance/code/contributing) first.
+You can start by reading our [Contribution guidelines](https://docs.EasyBakeswap.finance/code/contributing) first.
 
 ## Setup
 
@@ -14,12 +14,12 @@ yarn start
 
 Don't forget to setup your IDE with `eslint` and `prettier`.
 
-## Change BSC network
+## Change ERC network
 
-To change the BSC network from test net, modify the `REACT_APP_CHAIN_ID` value in `.env`.
+To change the ERC network from test net, modify the `REACT_APP_CHAIN_ID` value in `.env`.
 
-- MAIN NET `56`
-- TEST NET `97`
+- MAIN NET `1`
+- TEST NET `4`
 
 ## Tests
 
@@ -66,4 +66,4 @@ The translation component can handle variables being passed in from Crowdin, wit
 
 It will only work if there is only **one** variable passed in, and if that variable within Crowdin is wrapped in **%** signs, i.e.:
 
-Translation in crowdin: `%asset% Earned` [link](https://crowdin.com/translate/pancakeswap/8/en-de#330)
+Translation in crowdin: `%asset% Earned` [link](https://crowdin.com/translate/EasyBakeswap/8/en-de#330)

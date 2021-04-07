@@ -1,5 +1,6 @@
-import React, { useContext, useMemo } from 'react'
-import { ThemeContext } from 'styled-components'
+// import React, { useContext, useMemo } from 'react'
+import React, { useMemo } from 'react'
+// import { ThemeContext } from 'styled-components'
 import { Pair } from 'easybakeswap-sdk'
 import { Button, CardBody, Text } from 'easybake-uikit'
 import { Link } from 'react-router-dom'
@@ -21,7 +22,7 @@ import PageHeader from 'components/PageHeader'
 import AppBody from '../AppBody'
 
 export default function Pool() {
-  const theme = useContext(ThemeContext)
+  // const theme = useContext(ThemeContext)
   const { account } = useActiveWeb3React()
   const TranslateString = useI18n()
 
@@ -60,9 +61,9 @@ export default function Pool() {
       <AppBody>
         <PageHeader
           title={TranslateString(262, 'Liquidity')}
-          description={TranslateString(1168, 'Add liquidity to receive LP tokens')}
+          description={TranslateString(1168, 'Add liquidity to receive $DOUGH LP')}
         >
-          <Button id="join-pool-button" as={Link} to="/add/BNB">
+          <Button id="join-pool-button" as={Link} to="/add/ETH">
             {TranslateString(168, 'Add Liquidity')}
           </Button>
         </PageHeader>
@@ -70,11 +71,11 @@ export default function Pool() {
           <CardBody>
             <AutoColumn gap="12px" style={{ width: '100%' }}>
               <RowBetween padding="0 8px">
-                <Text color={theme.colors.text}>{TranslateString(107, 'Your Liquidity')}</Text>
+                <Text textAlign="center"> Your Liquidity </Text>
                 <Question
                   text={TranslateString(
                     1170,
-                    'When you add liquidity, you are given pool tokens that represent your share. If you don’t see a pool you joined in this list, try importing a pool below.'
+                    'When you add liquidity, you are given pool tokens ("dough") that represent your share. If you don’t see a pool you joined in this list, try importing a pool below.'
                   )}
                 />
               </RowBetween>
@@ -107,13 +108,13 @@ export default function Pool() {
 
               <div>
                 <Text fontSize="14px" style={{ padding: '.5rem 0 .5rem 0' }}>
-                  {TranslateString(106, "Don't see a pool you joined?")}{' '}
+                  {TranslateString(106, "")}{' '}
                   <StyledInternalLink id="import-pool-link" to="/find">
-                    {TranslateString(108, 'Import it.')}
+                    <Text textAlign = 'center' > Import </Text>
                   </StyledInternalLink>
                 </Text>
-                <Text fontSize="14px" style={{ padding: '.5rem 0 .5rem 0' }}>
-                  {TranslateString(1172, 'Or, if you staked your LP tokens in a farm, unstake them to see them here.')}
+                <Text fontSize="11px" style={{ padding: '.5rem 0 .5rem 0' }}>
+                <Text textAlign = 'center' > Note: Staked DOUGH Not Included </Text>
                 </Text>
               </div>
             </AutoColumn>

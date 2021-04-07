@@ -45,7 +45,7 @@
     "ajv": "^6.12.3",
     "cids": "^1.0.0",
     "copy-to-clipboard": "^3.2.0",
-    "easybake-uikit": "^2.0.1",
+    "easybake-uikit": "^2.1.0",
     "easybakeswap-sdk": "^1.1.2",
     "easybakeswap-uikit": "^1.1.0",
     "ethers": "^5.0.7",

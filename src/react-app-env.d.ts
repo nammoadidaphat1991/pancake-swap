@@ -13,7 +13,7 @@ interface Window {
     removeListener?: (...args: any[]) => void
   }
   web3?: any
-  BinanceChain?: BinanceChain
+  EthereumChain?: EthereumChain
 }
 
 declare module 'content-hash' {
@@ -26,7 +26,7 @@ declare module 'multihashes' {
   declare function toB58String(hash: Uint8Array): string
 }
 
-interface BinanceChain {
+interface EthereumChain {
   send: unknown
   enable: () => Promise<string[]>
   on?: (method: string, listener: (...args: any[]) => void) => void

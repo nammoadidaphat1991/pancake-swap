@@ -1,10 +1,11 @@
-import { MenuEntry, menuStatus } from 'easybake-uikit'
+// import { MenuEntry, menuStatus } from 'easybake-uikit'
+import { MenuEntry } from 'easybake-uikit'
 
 const config: MenuEntry[] = [
   {
     label: 'Home',
     icon: 'HomeIcon',
-    href: 'https://pancakeswap.finance/',
+    href: 'https://easybake.finance/',
   },
   {
     label: 'Trade',
@@ -24,101 +25,94 @@ const config: MenuEntry[] = [
   {
     label: 'Farms',
     icon: 'FarmIcon',
-    href: 'https://pancakeswap.finance/farms',
+    href: 'https://easybake.finance/farms',
   },
-  {
-    label: 'Pools',
-    icon: 'PoolIcon',
-    href: 'https://pancakeswap.finance/syrup',
-  },
-  {
-    label: 'Lottery',
-    icon: 'TicketIcon',
-    href: 'https://pancakeswap.finance/lottery',
-  },
-  {
-    label: 'NFT',
-    icon: 'NftIcon',
-    href: 'https://pancakeswap.finance/nft',
-  },
-  {
-    label: 'Team Battle',
-    icon: 'TeamBattleIcon',
-    href: 'https://pancakeswap.finance/competition',
-    status: menuStatus.SOON,
-  },
-  {
-    label: 'Teams & Profile',
-    icon: 'GroupsIcon',
-    items: [
-      {
-        label: 'Leaderboard',
-        href: 'https://pancakeswap.finance/teams',
-      },
-      {
-        label: 'Task Center',
-        href: 'https://pancakeswap.finance/profile/tasks',
-      },
-      {
-        label: 'Your Profile',
-        href: 'https://pancakeswap.finance/profile',
-      },
-    ],
-  },
+  // {
+  //   label: 'Pools',
+  //   icon: 'PoolIcon',
+  //   href: 'https://easybake.finance/sugar',
+  // },
+  // {
+  //   label: 'Lottery',
+  //   icon: 'TicketIcon',
+  //   href: 'https://easybake.finance/lottery',
+  // },
+  // {
+  //   label: 'NFT',
+  //   icon: 'NftIcon',
+  //   href: 'https://easybake.finance/nft',
+  // },
+  // {
+  //   label: 'Team Battle',
+  //   icon: 'TeamBattleIcon',
+  //   href: 'https://easybake.finance/competition',
+  //   status: menuStatus.SOON,
+  // },
+  // {
+  //   label: 'Teams & Profile',
+  //   icon: 'GroupsIcon',
+  //   calloutClass: 'rainbow',
+  //   items: [
+  //     {
+  //       label: 'Leaderboard',
+  //       href: 'https://easybakeswap.finance/teams',
+  //     },
+  //     {
+  //       label: 'Task Center',
+  //       href: 'https://easybakeswap.finance/profile/tasks',
+  //     },
+  //     {
+  //       label: 'Your Profile',
+  //       href: 'https://easybakeswap.finance/profile',
+  //     },
+  //   ],
+  // },
   {
     label: 'Info',
     icon: 'InfoIcon',
     items: [
       {
         label: 'Overview',
-        href: 'https://pancakeswap.info',
+        href: 'https://info.easybake.finance',
       },
       {
         label: 'Tokens',
-        href: 'https://pancakeswap.info/tokens',
+        href: 'https://info.easybake.finance/tokens',
       },
       {
         label: 'Pairs',
-        href: 'https://pancakeswap.info/pairs',
+        href: 'https://info.easybake.finance/pairs',
       },
       {
         label: 'Accounts',
-        href: 'https://pancakeswap.info/accounts',
+        href: 'https://info.easybake.finance/accounts',
       },
     ],
   },
-  {
-    label: 'IFO',
-    icon: 'IfoIcon',
-    href: 'https://pancakeswap.finance/ifo',
-  },
+  // {
+  //   label: 'IFO',
+  //   icon: 'IfoIcon',
+  //   href: 'https://easybake.finance/ifo',
+  // },
   {
     label: 'More',
     icon: 'MoreIcon',
     items: [
       {
-        label: 'Contact',
-        href: 'https://docs.pancakeswap.finance/contact-us',
-      },
-      {
         label: 'Voting',
-        href: 'https://voting.pancakeswap.finance',
+        href: 'https://snapshot.page/#/easybake.eth',
       },
       {
         label: 'Github',
-        href: 'https://github.com/pancakeswap',
+        href: 'https://github.com/easybakeswap',
       },
-      {
-        label: 'Docs',
-        href: 'https://docs.pancakeswap.finance',
-      },
+      // {
+      //   label: 'Docs',
+      //   href: 'https://easybake.finance',
+      // },
       {
         label: 'Blog',
-        href: 'https://pancakeswap.medium.com',
-      },
-      {
-        label: 'Merch',
-        href: 'https://pancakeswap.creator-spring.com/',
+        href: 'https://easybake.medium.com',
       },
     ],
   },
