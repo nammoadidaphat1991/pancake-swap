@@ -1,5 +1,5 @@
 import { Contract } from '@ethersproject/contracts'
-import { ChainId, WETH } from '@pancakeswap-libs/sdk'
+import { ChainId, WETH } from 'easybakeswap-sdk'
 import { abi as IUniswapV2PairABI } from '@uniswap/v2-core/build/IUniswapV2Pair.json'
 import { useMemo } from 'react'
 import ENS_ABI from '../constants/abis/ens-registrar.json'
@@ -41,7 +41,10 @@ export function useENSRegistrarContract(withSignerIfPossible?: boolean): Contrac
   if (chainId) {
     switch (chainId) {
       case ChainId.MAINNET:
-      case ChainId.BSCTESTNET:
+      case ChainId.ROPSTEN:
+      case ChainId.RINKEBY:
+      case ChainId.GÖRLI:
+      case ChainId.KOVAN:      
     }
   }
   return useContract(address, ENS_ABI, withSignerIfPossible)

@@ -1,4 +1,4 @@
-import { MenuEntry, menuStatus } from '@pancakeswap-libs/uikit'
+import { MenuEntry, menuStatus } from 'easybake-uikit'
 
 const config: MenuEntry[] = [
   {
