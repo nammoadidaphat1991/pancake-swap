@@ -1,6 +1,6 @@
 import React, { useContext, useMemo } from 'react'
 import styled, { ThemeContext } from 'styled-components'
-import { Trade, TradeType } from 'easybakeswap-sdk'
+import { Trade, TradeType } from '@uniswap/sdk'
 import { Button, Text } from 'easybake-uikit'
 import { ArrowDown, AlertTriangle } from 'react-feather'
 import { Field } from '../../state/swap/actions'

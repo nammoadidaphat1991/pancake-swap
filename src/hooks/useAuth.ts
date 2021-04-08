@@ -11,7 +11,7 @@ import {
 } from '@web3-react/walletconnect-connector'
 import { connectorLocalStorageKey, ConnectorNames } from 'easybake-uikit'
 import useToast from 'hooks/useToast'
-import { connectorsByName } from 'connectors'
+import { connectorsByName } from 'connectors/indexV2'
 
 const useAuth = () => {
   const { activate, deactivate } = useWeb3React()

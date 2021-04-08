@@ -1,4 +1,4 @@
-import { Currency, ETHER, Token } from 'easybakeswap-sdk'
+import { Currency, ETHER, Token } from '@uniswap/sdk'
 import React, { KeyboardEvent, RefObject, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react'
 import { Text, CloseIcon } from 'easybake-uikit'
 // import { useSelector } from 'react-redux'

@@ -1,4 +1,4 @@
-import { ChainId } from 'easybakeswap-sdk'
+import { ChainId } from '@uniswap/sdk'
 import React, { useContext } from 'react'
 import { ThemeContext } from 'styled-components'
 import { Button, LinkExternal } from 'easybake-uikit'

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Currency, Percent, Price } from 'easybakeswap-sdk'
+import { Currency, Percent, Price } from '@uniswap/sdk'
 import { Text } from 'easybake-uikit'
 import { AutoColumn } from '../../components/Column'
 import { AutoRow } from '../../components/Row'

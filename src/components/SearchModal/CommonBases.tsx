@@ -1,6 +1,6 @@
 import React from 'react'
 import { Text } from 'easybake-uikit'
-import { ChainId, Currency, currencyEquals, ETHER, Token } from 'easybakeswap-sdk'
+import { ChainId, Currency, currencyEquals, ETHER, Token } from '@uniswap/sdk'
 import styled from 'styled-components'
 
 import useI18n from 'hooks/useI18n'

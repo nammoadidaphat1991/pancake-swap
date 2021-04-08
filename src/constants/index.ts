@@ -1,11 +1,11 @@
-import { ChainId, JSBI, Percent, Token, WETH } from 'easybakeswap-sdk'
+import { ChainId, JSBI, Percent, Token, WETH } from '@uniswap/sdk'
 import { AbstractConnector } from '@web3-react/abstract-connector'
-import { injected, walletconnect, walletlink } from '../connectors'
+import { injected, walletconnect, walletlink } from '../connectors/indexV2'
 
 
 // export const ROUTER_ADDRESS = '0x05fF2B0DB69458A0750badebc4f9e13aDd608C7F' // PANCAKE
-export const ROUTER_ADDRESS = '0xC68B5E608d91607FDB0504e7d9345EA85FA980b4' // EASYBAKE
-// export const ROUTER_ADDRESS = '0xd0036AF39D473a604bAAf8a32bF5A026316428c0' // UNISWAP
+// export const ROUTER_ADDRESS = '0xC68B5E608d91607FDB0504e7d9345EA85FA980b4' // EASYBAKE R2
+export const ROUTER_ADDRESS = '0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D' // UNISWAP
 
 
 // a list of tokens by chain

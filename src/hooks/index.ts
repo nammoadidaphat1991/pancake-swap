@@ -1,12 +1,12 @@
 import { Web3Provider } from '@ethersproject/providers'
-import { ChainId } from 'easybakeswap-sdk'
+import { ChainId } from '@uniswap/sdk'
 import { connectorLocalStorageKey } from 'easybake-uikit'
 import { useWeb3React as useWeb3ReactCore } from '@web3-react/core'
 // eslint-disable-next-line import/no-unresolved
 import { Web3ReactContextInterface } from '@web3-react/core/dist/types'
 import { useEffect, useState } from 'react'
 import { isMobile } from 'react-device-detect'
-import { injected } from '../connectors'
+import { injected } from '../connectors/indexV2'
 import { NetworkContextName } from '../constants'
 
 export function useActiveWeb3React(): Web3ReactContextInterface<Web3Provider> & { chainId?: ChainId } {

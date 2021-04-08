@@ -1,5 +1,5 @@
 import React from 'react'
-import { Trade, TradeType } from 'easybakeswap-sdk'
+import { Trade, TradeType } from '@uniswap/sdk'
 import { Card, CardBody, Text } from 'easybake-uikit'
 import useI18n from 'hooks/useI18n'
 import { Field } from '../../state/swap/actions'
