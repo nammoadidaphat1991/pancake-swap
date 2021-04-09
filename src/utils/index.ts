@@ -3,8 +3,9 @@ import { getAddress } from '@ethersproject/address'
 import { AddressZero } from '@ethersproject/constants'
 import { JsonRpcSigner, Web3Provider } from '@ethersproject/providers'
 import { BigNumber } from '@ethersproject/bignumber'
-import { abi as IUniswapV2Router02ABI } from '@uniswap/v2-periphery/build/IUniswapV2Router02.json'
-import { ChainId, JSBI, Percent, Token, CurrencyAmount, Currency, ETHER } from '@uniswap/sdk'
+// import { abi as IUniswapV2Router02ABI } from '@uniswap/v2-periphery/build/IUniswapV2Router02.json'
+ import { abi as IEasyBakeRouter02ABI } from 'easybake-swap-periphery/build/IEasyBakeRouter02.json'
+import { ChainId, JSBI, Percent, Token, CurrencyAmount, Currency, ETHER } from 'easybakeswap-sdk'
 import { ROUTER_ADDRESS } from '../constants'
 import { TokenAddressMap } from '../state/lists/hooks'
 
@@ -19,10 +20,7 @@ export function isAddress(value: any): string | false {
 
 const ERCSCAN_PREFIXES: { [chainId in ChainId]: string } = {
   1: '',
-  3: 'ropsten.',
-  4: 'rinkeby.',
-  5: 'görli.',
-  42: 'kovan.'
+  4: 'rinkeby.'
 }
 
 export function getErcScanLink(chainId: ChainId, data: string, type: 'transaction' | 'token' | 'address'): string {
@@ -92,7 +90,7 @@ export function getContract(address: string, ABI: any, library: Web3Provider, ac
 
 // account is optional
 export function getRouterContract(_: number, library: Web3Provider, account?: string): Contract {
-  return getContract(ROUTER_ADDRESS, IUniswapV2Router02ABI, library, account)
+  return getContract(ROUTER_ADDRESS, IEasyBakeRouter02ABI, library, account)
 }
 
 export function escapeRegExp(string: string): string {

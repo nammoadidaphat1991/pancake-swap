@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Fraction, Percent } from '@uniswap/sdk'
+import { Currency, CurrencyAmount, Fraction, Percent } from 'easybakeswap-sdk'
 import React from 'react'
 import { Button, Text } from 'easybake-uikit'
 import { TranslateString } from 'utils/translateTextHelpers'

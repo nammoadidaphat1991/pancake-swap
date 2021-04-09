@@ -1,5 +1,5 @@
 import React from 'react'
-import { Price } from '@uniswap/sdk'
+import { Price } from 'easybakeswap-sdk'
 import { SyncAltIcon, Text } from 'easybake-uikit'
 import { StyledBalanceMaxMini } from './styleds'
 

@@ -1,4 +1,4 @@
-import { Trade, TradeType } from '@uniswap/sdk'
+import { Trade, TradeType } from 'easybakeswap-sdk'
 import React, { useMemo, useState } from 'react'
 import { Text, Button } from 'easybake-uikit'
 import { Repeat } from 'react-feather'

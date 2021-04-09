@@ -1,4 +1,4 @@
-import { ChainId, Token } from '@uniswap/sdk'
+import { ChainId, Token } from 'easybakeswap-sdk'
 import { Tags, TokenInfo, TokenList } from '@uniswap/token-lists'
 import { useMemo } from 'react'
 import { useSelector } from 'react-redux'
@@ -35,10 +35,7 @@ export type TokenAddressMap = Readonly<{ [chainId in ChainId]: Readonly<{ [token
  */
 const EMPTY_LIST: TokenAddressMap = {
   [ChainId.MAINNET]: {},
-  [ChainId.ROPSTEN]: {},
-  [ChainId.RINKEBY]: {},
-  [ChainId.GÖRLI]: {},
-  [ChainId.KOVAN]: {}
+  [ChainId.RINKEBY]: {}
 }
 
 const listCache: WeakMap<TokenList, TokenAddressMap> | null =

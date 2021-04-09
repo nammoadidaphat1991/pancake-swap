@@ -1,4 +1,4 @@
-import { Token } from '@uniswap/sdk'
+import { Token } from 'easybakeswap-sdk'
 import { transparentize } from 'polished'
 import { Button, Text } from 'easybake-uikit'
 import React, { useCallback, useMemo, useState } from 'react'
