@@ -4,7 +4,7 @@ import { injected, walletconnect, walletlink } from '../connectors/indexV2'
 
 
 // export const ROUTER_ADDRESS = '0x05fF2B0DB69458A0750badebc4f9e13aDd608C7F' // PANCAKE
-export const ROUTER_ADDRESS = '0xC68B5E608d91607FDB0504e7d9345EA85FA980b4' // EASYBAKE R2
+export const ROUTER_ADDRESS = '0xF7Cc04B435d590e20bf7f0B67C5aA6B43177aB0A' // EASYBAKE R2
 // export const ROUTER_ADDRESS = '0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D' // UNISWAP
 
 
